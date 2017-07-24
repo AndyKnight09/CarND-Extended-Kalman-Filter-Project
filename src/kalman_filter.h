@@ -59,10 +59,15 @@ public:
   void Update(const Eigen::VectorXd &z);
 
   /**
-   * Updates the state by using Extended Kalman Filter equations
-   * @param z The measurement at k+1
-   */
+  * Updates the state by using extended Kalman Filter equations
+  * @param z The measurement at k+1
+  */
   void UpdateEKF(const Eigen::VectorXd &z);
+
+  /**
+  * A helper method to calculate predicted radar measurement (based on current state estimate)
+  */
+  Eigen::VectorXd CalculatePredictedMeasurement(const Eigen::VectorXd& x_state);
 
 };
 
